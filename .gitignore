@@ -18,3 +18,9 @@
 
 build
 node_modules
+dist/
+
+#jetbrains
+
+.idea/
+.vscode/
