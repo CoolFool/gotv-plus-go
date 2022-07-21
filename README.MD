@@ -14,17 +14,20 @@ Using `tv_broadcast` cvars you will enable GOTV+ on your CS:GO Server which will
 There are a few projects similar to this. [kunalpowar/csgo-broadacst](https://github.com/kunalpowar/csgo-broadcast)(Go with mux) and [S5Projects/csgo-broadcast](https://github.com/S5Projects/csgo-broadcast)(NodeJS/TypeScript with Express).  
 
 ## Usage
+
 - Launch GOTV+ Server  
 Directly using Go: `go run ./main.go -addr <IP-ADDRESS>:8080 -auth gopher`  
 Using precompiled binary: `./gotv_plus -addr <IP-ADDRESS>:8080 -auth gopher`  
+Using Docker: `docker run -d --name gotv-plus-go -p <IP-ADDRESS>:8080:8080 coolfool/gotv-plus-go`
+
 
 - Enable GOTV broadcast in CS:GO Server by adding this to server.cfg  
 `MATCH_ID` can be what ever you want!  
 ```
-tv_enable 1
-tv_broadcast_url "http://<IP-ADDRESS>:8080/id/MATCH_ID"
-tv_broadcast_origin_auth "gopher"
-tv_broadcast 1
+    tv_enable 1
+    tv_broadcast_url "http://<IP-ADDRESS>:8080/id/MATCH_ID"
+    tv_broadcast_origin_auth "gopher"
+    tv_broadcast 1
 ```
 
 - Connect to GOTV+ from CS:GO Client  
