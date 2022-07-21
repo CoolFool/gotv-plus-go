@@ -1,3 +1,5 @@
+#Build Command: docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6,linux/386,linux/ppc64le,linux/s390x --tag <username>/gotv-plus-go  --push .
+
 FROM --platform=$BUILDPLATFORM golang:1.16.15-alpine AS build
 WORKDIR /src
 COPY go.mod go.sum ./
